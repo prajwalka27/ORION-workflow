@@ -1,0 +1,2140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ORION Discipline & Member Management System</title>
+    <meta
+      name="description"
+      content="ORION internal management system for tracking member participation, attendance, and contribution."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">ORION</div>
+          <div class="motto">EARNED, NOT FAVORED</div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active" data-target="view-dashboard">
+            <span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+          </a>
+          <a href="#" class="nav-item" data-target="view-members">
+            <span class="material-symbols-outlined">group</span>
+            Members
+          </a>
+          <a href="#" class="nav-item" data-target="view-attendance">
+            <span class="material-symbols-outlined">how_to_reg</span>
+            Attendance
+          </a>
+
+          <a href="#" class="nav-item" data-target="view-tasks">
+            <span class="material-symbols-outlined">task_alt</span>
+            Tasks
+          </a>
+          <a href="#" class="nav-item" data-target="view-contributions">
+            <span class="material-symbols-outlined">trending_up</span>
+            Contributions
+          </a>
+          <a href="#" class="nav-item" data-target="view-duties">
+            <span class="material-symbols-outlined">assignment_ind</span>
+            Duties
+          </a>
+          <a href="#" class="nav-item" data-target="view-reports">
+            <span class="material-symbols-outlined">bar_chart</span>
+            Reports
+          </a>
+
+          <div class="nav-divider"></div>
+
+          <a href="#" class="nav-item special-hover" id="btn-notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            Notifications
+            <span class="badge pulse">3</span>
+          </a>
+          <a href="#" class="nav-item special-hover" data-target="view-activity-log">
+            <span class="material-symbols-outlined">history</span>
+            Activity Log
+          </a>
+          <a href="#" class="nav-item special-hover" data-target="view-settings">
+            <span class="material-symbols-outlined icon-spin">settings</span>
+            Settings
+          </a>
+        </nav>
+
+        <div class="user-profile">
+          <div class="avatar">
+            <img
+              src="https://ui-avatars.com/api/?name=Discipline+Lead&background=2C2C35&color=D4AF37"
+              alt="User Avatar"
+            />
+          </div>
+          <div class="user-info">
+            <div class="user-name">Rahul Sharma</div>
+            <div class="user-role">Discipline Lead</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div id="view-dashboard" class="view-section active">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Main Dashboard</h1>
+              <p class="page-subtitle">Live snapshot of ORION's health</p>
+            </div>
+            <div class="header-actions"></div>
+          </header>
+
+          <section class="dashboard-grid">
+            <!-- Stat Cards -->
+            <div class="card stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Active Members</span>
+                <span class="material-symbols-outlined stat-icon">group</span>
+              </div>
+              <div class="stat-value">87</div>
+              <div class="stat-meta text-success">
+                <span class="material-symbols-outlined">arrow_upward</span>
+                +2 since last month
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Latest Event Present</span>
+                <span class="material-symbols-outlined stat-icon"
+                  >how_to_reg</span
+                >
+              </div>
+              <div class="stat-value">74</div>
+              <div class="stat-meta">Out of 87 members</div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Attendance</span>
+                <span class="material-symbols-outlined stat-icon">percent</span>
+              </div>
+              <div class="stat-value">85%</div>
+              <div class="stat-meta text-success">
+                <span class="material-symbols-outlined">arrow_upward</span>
+                Target &gt; 80%
+              </div>
+            </div>
+
+            <div class="card stat-card">
+              <div class="stat-header">
+                <span class="stat-title">Tasks</span>
+                <span class="material-symbols-outlined stat-icon">task</span>
+              </div>
+              <div class="stat-value">
+                38 <span class="stat-subtext">/ 50</span>
+              </div>
+              <div class="stat-meta text-warning">12 Pending</div>
+            </div>
+
+            <!-- Recent Activity Feed -->
+            <div class="card span-2">
+              <div class="card-header">
+                <h2 class="card-title">Activity Log</h2>
+                <a href="#" class="link">View All</a>
+              </div>
+              <div class="activity-feed">
+                <div class="activity-item">
+                  <div class="activity-icon bg-accent">
+                    <span class="material-symbols-outlined">check_circle</span>
+                  </div>
+                  <div class="activity-content">
+                    <p>
+                      <strong>Discipline Secretary</strong> marked Rahul present
+                      at <strong>ORION Ideathon</strong>
+                    </p>
+                    <span class="activity-time">25 Sep, 10:32 AM</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon bg-secondary">
+                    <span class="material-symbols-outlined">assignment</span>
+                  </div>
+                  <div class="activity-content">
+                    <p>
+                      <strong>Director</strong> assigned photography task to
+                      <strong>Member 024</strong>
+                    </p>
+                    <span class="activity-time">25 Sep, 11:10 AM</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon bg-success">
+                    <span class="material-symbols-outlined">verified</span>
+                  </div>
+                  <div class="activity-content">
+                    <p>
+                      <strong>Contribution record</strong> updated for 5 members
+                      in Media Wing
+                    </p>
+                    <span class="activity-time">24 Sep, 08:45 PM</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon bg-warning">
+                    <span class="material-symbols-outlined">warning</span>
+                  </div>
+                  <div class="activity-content">
+                    <p>
+                      <strong>Task Overdue</strong>: Venue setup for upcoming
+                      cultural fest
+                    </p>
+                    <span class="activity-time">24 Sep, 09:00 AM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upcoming Events / Overview -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Upcoming Events</h2>
+              </div>
+              <div class="event-list">
+                <div class="event-card">
+                  <div class="event-date">
+                    <span class="month">OCT</span>
+                    <span class="day">12</span>
+                  </div>
+                  <div class="event-details">
+                    <h3>Tech Symposium 2024</h3>
+                    <p>
+                      <span class="material-symbols-outlined">location_on</span>
+                      Main Auditorium
+                    </p>
+                  </div>
+                  <div class="event-status status-upcoming">Upcoming</div>
+                </div>
+                <div class="event-card">
+                  <div class="event-date">
+                    <span class="month">OCT</span>
+                    <span class="day">28</span>
+                  </div>
+                  <div class="event-details">
+                    <h3>ORION General Meet</h3>
+                    <p>
+                      <span class="material-symbols-outlined">schedule</span>
+                      17:00 HRS
+                    </p>
+                  </div>
+                  <div class="event-status status-upcoming">Upcoming</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Tasks List -->
+            <div class="card span-3">
+              <div class="card-header">
+                <h2 class="card-title">Pending Tasks & Duties</h2>
+                <div class="card-actions">
+                  <button class="btn btn-icon">
+                    <span class="material-symbols-outlined">filter_list</span>
+                  </button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Task Title</th>
+                      <th>Assigned To</th>
+                      <th>Wing</th>
+                      <th>Deadline</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Prepare Attendance Sheet</td>
+                      <td>Rahul S.</td>
+                      <td>Discipline</td>
+                      <td>Oct 10, 2024</td>
+                      <td>
+                        <span class="badge badge-warning">In Progress</span>
+                      </td>
+                      <td><button class="btn btn-sm">Review</button></td>
+                    </tr>
+                    <tr>
+                      <td>Venue Decoration</td>
+                      <td>Sneha M.</td>
+                      <td>Cultural</td>
+                      <td>Oct 11, 2024</td>
+                      <td><span class="badge badge-danger">Overdue</span></td>
+                      <td><button class="btn btn-sm">Nudge</button></td>
+                    </tr>
+                    <tr>
+                      <td>Finalize Guest List</td>
+                      <td>Core Team</td>
+                      <td>Core</td>
+                      <td>Oct 15, 2024</td>
+                      <td>
+                        <span class="badge badge-default">Not Started</span>
+                      </td>
+                      <td><button class="btn btn-sm">View</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div id="view-members" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Members Directory</h1>
+              <p class="page-subtitle">Manage and view all ORION members</p>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-primary" id="btn-add-member">
+                <span class="material-symbols-outlined">add</span>
+                Add New Member
+              </button>
+            </div>
+          </header>
+
+          <section class="members-grid">
+            <!-- Demo Member Card 1 -->
+            <div class="member-card">
+              <div class="member-info">
+                <img
+                  class="member-avatar"
+                  src="https://ui-avatars.com/api/?name=Siddharth+Rao&background=2C2C35&color=D4AF37&size=128"
+                  alt="Avatar"
+                />
+                <div class="member-name">Siddharth Rao</div>
+                <div class="member-role">President</div>
+                <div class="member-wing">Core Leadership Committee</div>
+                <div class="member-dept">School of CSE (4th Year)</div>
+              </div>
+              <div class="member-actions">
+                <button class="btn-icon" title="View Profile">
+                  <span class="material-symbols-outlined">visibility</span>
+                </button>
+                <button class="btn-icon" title="Update Profile">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="btn-icon btn-danger" title="Delete Member">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo Member Card 2 -->
+            <div class="member-card">
+              <div class="member-info">
+                <img
+                  class="member-avatar"
+                  src="https://ui-avatars.com/api/?name=Priya+Deshmukh&background=2C2C35&color=D4AF37&size=128"
+                  alt="Avatar"
+                />
+                <div class="member-name">Priya Deshmukh</div>
+                <div class="member-role">Discipline Lead</div>
+                <div class="member-wing">Discipline Wing</div>
+                <div class="member-dept">School of ECE (3rd Year)</div>
+              </div>
+              <div class="member-actions">
+                <button class="btn-icon" title="View Profile">
+                  <span class="material-symbols-outlined">visibility</span>
+                </button>
+                <button class="btn-icon" title="Update Profile">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="btn-icon btn-danger" title="Delete Member">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo Member Card 3 -->
+            <div class="member-card">
+              <div class="member-info">
+                <img
+                  class="member-avatar"
+                  src="https://ui-avatars.com/api/?name=Aman+Verma&background=2C2C35&color=D4AF37&size=128"
+                  alt="Avatar"
+                />
+                <div class="member-name">Aman Verma</div>
+                <div class="member-role">Member</div>
+                <div class="member-wing">Technical Wing</div>
+                <div class="member-dept">School of IT (2nd Year)</div>
+              </div>
+              <div class="member-actions">
+                <button class="btn-icon" title="View Profile">
+                  <span class="material-symbols-outlined">visibility</span>
+                </button>
+                <button class="btn-icon" title="Update Profile">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="btn-icon btn-danger" title="Delete Member">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo Member Card 4 -->
+            <div class="member-card">
+              <div class="member-info">
+                <img
+                  class="member-avatar"
+                  src="https://ui-avatars.com/api/?name=Sneha+Patil&background=2C2C35&color=D4AF37&size=128"
+                  alt="Avatar"
+                />
+                <div class="member-name">Sneha Patil</div>
+                <div class="member-role">Member</div>
+                <div class="member-wing">Cultural Wing</div>
+                <div class="member-dept">School of MECH (4th Year)</div>
+              </div>
+              <div class="member-actions">
+                <button class="btn-icon" title="View Profile">
+                  <span class="material-symbols-outlined">visibility</span>
+                </button>
+                <button class="btn-icon" title="Update Profile">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="btn-icon btn-danger" title="Delete Member">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Demo Member Card 5 -->
+            <div class="member-card">
+              <div class="member-info">
+                <img
+                  class="member-avatar"
+                  src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=2C2C35&color=D4AF37&size=128"
+                  alt="Avatar"
+                />
+                <div class="member-name">Rahul Sharma</div>
+                <div class="member-role">Secretary</div>
+                <div class="member-wing">Media & Marketing</div>
+                <div class="member-dept">School of CSE (1st Year)</div>
+              </div>
+              <div class="member-actions">
+                <button class="btn-icon" title="View Profile">
+                  <span class="material-symbols-outlined">visibility</span>
+                </button>
+                <button class="btn-icon" title="Update Profile">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="btn-icon btn-danger" title="Delete Member">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div id="view-attendance" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Attendance Tracking</h1>
+              <p class="page-subtitle">
+                Monitor member attendance and create events
+              </p>
+            </div>
+            <div
+              class="header-actions"
+              style="display: flex; gap: 12px; align-items: center"
+            >
+              <div class="dropdown-wrapper">
+                <button class="btn btn-secondary" id="btn-filter-attendance">
+                  <span class="material-symbols-outlined">filter_list</span>
+                  Filter
+                </button>
+                <div class="dropdown-menu" id="filter-dropdown">
+                  <a href="#" class="dropdown-item" data-sort="lowest"
+                    >Lowest Attendance</a
+                  >
+                  <a href="#" class="dropdown-item" data-sort="highest"
+                    >Highest Attendance</a
+                  >
+                </div>
+              </div>
+              <button class="btn btn-primary" id="btn-create-event">
+                <span class="material-symbols-outlined">add</span> Create New
+                Event
+              </button>
+            </div>
+          </header>
+
+          <div
+            id="attendance-success-msg"
+            class="alert alert-success"
+            style="display: none"
+          >
+            Event created successfully!
+          </div>
+
+          <div class="table-responsive card">
+            <table class="data-table" id="attendance-table">
+              <thead>
+                <tr>
+                  <th>Member Name</th>
+                  <th>Wing</th>
+                  <th>Attendance %</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-attendance="95">
+                  <td>Siddharth Rao</td>
+                  <td>Core Leadership Committee</td>
+                  <td><span class="attendance-val">95%</span></td>
+                  <td><span class="badge badge-success">Excellent</span></td>
+                </tr>
+                <tr data-attendance="65">
+                  <td>Priya Deshmukh</td>
+                  <td>Discipline Wing</td>
+                  <td><span class="attendance-val">65%</span></td>
+                  <td>
+                    <span class="badge badge-warning">Needs Improvement</span>
+                  </td>
+                </tr>
+                <tr data-attendance="40">
+                  <td>Aman Verma</td>
+                  <td>Technical Wing</td>
+                  <td><span class="attendance-val">40%</span></td>
+                  <td><span class="badge badge-danger">Critical</span></td>
+                </tr>
+                <tr data-attendance="85">
+                  <td>Sneha Patil</td>
+                  <td>Cultural Wing</td>
+                  <td><span class="attendance-val">85%</span></td>
+                  <td><span class="badge badge-success">Good</span></td>
+                </tr>
+                <tr data-attendance="100">
+                  <td>Rahul Sharma</td>
+                  <td>Media & Marketing</td>
+                  <td><span class="attendance-val">100%</span></td>
+                  <td><span class="badge badge-success">Perfect</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Created Events Section -->
+          <div style="margin-top: 32px">
+            <h2 class="card-title" style="margin-bottom: 16px">
+              Created Events
+            </h2>
+            <div id="created-events-container" class="events-grid">
+              <!-- Dynamically added events will appear here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Member Modal -->
+        <div id="add-member-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Add New Member</h2>
+              <button class="btn-icon" id="btn-close-member-modal">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="member-name-input">Full Name</label>
+                <input
+                  type="text"
+                  id="member-name-input"
+                  class="form-input"
+                  placeholder="e.g., Jane Doe"
+                />
+              </div>
+              <div class="form-group">
+                <label for="member-role-input">Role</label>
+                <input
+                  type="text"
+                  id="member-role-input"
+                  class="form-input"
+                  placeholder="e.g., President"
+                />
+              </div>
+              <div class="form-group">
+                <label for="member-wing-input">Wing/Committee</label>
+                <input
+                  type="text"
+                  id="member-wing-input"
+                  class="form-input"
+                  placeholder="e.g., Core Leadership Committee"
+                />
+              </div>
+              <div class="form-group">
+                <label for="member-dept-input">Department & Year</label>
+                <input
+                  type="text"
+                  id="member-dept-input"
+                  class="form-input"
+                  placeholder="e.g., School of CSE (4th Year)"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" id="btn-save-member">
+                Save Member
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Event Modal -->
+        <div
+          id="create-event-modal"
+          class="modal-overlay"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Create New Event</h2>
+              <button class="btn-icon" id="btn-close-modal">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="event-name">Event Name</label>
+                <input
+                  type="text"
+                  id="event-name"
+                  class="form-input"
+                  placeholder="Enter event name..."
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Select Members</label>
+                <input
+                  type="text"
+                  id="member-search"
+                  class="form-input search-input"
+                  placeholder="Search members..."
+                />
+
+                <div class="member-list-scroll">
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="member-checkbox"
+                      value="Siddharth Rao"
+                    />
+                    Siddharth Rao
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="member-checkbox"
+                      value="Priya Deshmukh"
+                    />
+                    Priya Deshmukh
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="member-checkbox"
+                      value="Aman Verma"
+                    />
+                    Aman Verma
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="member-checkbox"
+                      value="Sneha Patil"
+                    />
+                    Sneha Patil
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="member-checkbox"
+                      value="Rahul Sharma"
+                    />
+                    Rahul Sharma
+                  </label>
+                </div>
+              </div>
+              <div class="selected-counter">
+                <span id="selected-count-text">0</span> members selected
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" id="btn-save-event">
+                Save Event
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- View Event Modal -->
+        <div id="view-event-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 id="view-event-title">Event Name</h2>
+              <button class="btn-icon" id="btn-close-view-event">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3
+                style="
+                  font-size: 14px;
+                  color: var(--text-secondary);
+                  margin-bottom: 8px;
+                "
+              >
+                Selected Members
+              </h3>
+              <ul
+                id="view-event-members-list"
+                style="
+                  list-style: none;
+                  padding: 0;
+                  color: var(--text-primary);
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  max-height: 250px;
+                  overflow-y: auto;
+                "
+              >
+                <!-- Dynamically populated list -->
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" id="btn-dismiss-view-event">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- View Profile Modal -->
+        <div
+          id="view-profile-modal"
+          class="modal-overlay"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Member Profile</h2>
+              <button class="btn-icon" id="btn-close-view-profile">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body" style="text-align: center">
+              <img
+                id="view-profile-avatar"
+                src="https://ui-avatars.com/api/?name=Loading&background=2C2C35&color=D4AF37"
+                alt="Avatar"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 50%;
+                  margin: 0 auto 16px auto;
+                  display: block;
+                "
+              />
+              <h3
+                id="view-profile-name"
+                style="
+                  font-size: 20px;
+                  color: var(--text-primary);
+                  margin-bottom: 4px;
+                "
+              ></h3>
+              <p
+                id="view-profile-role"
+                style="
+                  font-size: 14px;
+                  color: var(--accent-color);
+                  font-weight: 600;
+                  margin-bottom: 8px;
+                "
+              ></p>
+              <p
+                id="view-profile-wing"
+                style="font-size: 13px; color: #00bcd4; margin-bottom: 4px"
+              ></p>
+              <p
+                id="view-profile-dept"
+                style="font-size: 13px; color: var(--text-secondary)"
+              ></p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" id="btn-dismiss-view-profile">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Update Profile Modal -->
+        <div
+          id="update-profile-modal"
+          class="modal-overlay"
+          style="display: none"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Update Member</h2>
+              <button class="btn-icon" id="btn-close-update-profile">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="update-member-name-input">Full Name</label>
+                <input
+                  type="text"
+                  id="update-member-name-input"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="update-member-role-input">Role</label>
+                <input
+                  type="text"
+                  id="update-member-role-input"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="update-member-wing-input">Wing/Committee</label>
+                <input
+                  type="text"
+                  id="update-member-wing-input"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="update-member-dept-input">Department & Year</label>
+                <input
+                  type="text"
+                  id="update-member-dept-input"
+                  class="form-input"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" id="btn-save-update-member">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Tasks View -->
+        <div id="view-tasks" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Tasks Management</h1>
+              <p class="page-subtitle">Track and assign ORION duties</p>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-primary" id="btn-assign-task">
+                <span class="material-symbols-outlined">add</span> Assign New
+                Task
+              </button>
+            </div>
+          </header>
+
+          <section class="tasks-grid">
+            <!-- Dummy Task 1 -->
+            <div class="task-card">
+              <div class="task-content">
+                <h3 class="task-name">Organize Tech Symposium</h3>
+                <p class="task-desc">
+                  Coordinate with vendors and finalize the schedule for the
+                  annual tech symposium.
+                </p>
+                <div class="task-meta">
+                  <span class="meta-label">Assigned to:</span>
+                  <span class="task-assignees">Siddharth Rao, Aman Verma</span>
+                </div>
+                <div class="task-meta">
+                  <span class="meta-label">Assigned by:</span>
+                  <span class="task-assigner">Dr. Sharma</span>
+                </div>
+                <div class="task-meta">
+                  <span class="meta-label">Due Date:</span>
+                  <span class="task-due-date">2026-10-15</span>
+                </div>
+              </div>
+              <div class="task-actions">
+                <button class="btn-icon" title="Edit Task">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Dummy Task 2 -->
+            <div class="task-card">
+              <div class="task-content">
+                <h3 class="task-name">Design Marketing Assets</h3>
+                <p class="task-desc">
+                  Create posters and digital banners for the upcoming cultural
+                  fest.
+                </p>
+                <div class="task-meta">
+                  <span class="meta-label">Assigned to:</span>
+                  <span class="task-assignees"
+                    >Rahul Sharma, Priya Deshmukh</span
+                  >
+                </div>
+                <div class="task-meta">
+                  <span class="meta-label">Assigned by:</span>
+                  <span class="task-assigner">Siddharth Rao</span>
+                </div>
+                <div class="task-meta">
+                  <span class="meta-label">Due Date:</span>
+                  <span class="task-due-date">2026-10-05</span>
+                </div>
+              </div>
+              <div class="task-actions">
+                <button class="btn-icon" title="Edit Task">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Dummy Task 3 -->
+            <div class="task-card">
+              <div class="task-content">
+                <h3 class="task-name">Update Members Directory</h3>
+                <p class="task-desc">
+                  Audit the current member list and ensure all details are up to
+                  date.
+                </p>
+                <div class="task-meta">
+                  <span class="meta-label">Assigned to:</span>
+                  <span class="task-assignees">Sneha Patil</span>
+                </div>
+                <div class="task-meta">
+                  <span class="meta-label">Assigned by:</span>
+                  <span class="task-assigner">Core Team</span>
+                </div>
+                <div class="task-meta">
+                  <span class="meta-label">Due Date:</span>
+                  <span class="task-due-date">2026-10-01</span>
+                </div>
+              </div>
+              <div class="task-actions">
+                <button class="btn-icon" title="Edit Task">
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Task Modal -->
+        <div id="task-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 id="task-modal-title">Assign New Task</h2>
+              <button class="btn-icon" id="btn-close-task-modal">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="task-name-input">Task Name</label>
+                <input type="text" id="task-name-input" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="task-assigner-input">Assigned By</label>
+                <input
+                  type="text"
+                  id="task-assigner-input"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="task-desc-input">Description</label>
+                <textarea
+                  id="task-desc-input"
+                  class="form-input"
+                  rows="3"
+                  style="resize: vertical"
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Assign Members</label>
+                <div id="task-selected-chips" class="chips-container"></div>
+                <input
+                  type="text"
+                  id="task-member-search"
+                  class="form-input search-input"
+                  placeholder="Search members..."
+                />
+
+                <div class="member-list-scroll">
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="task-member-checkbox"
+                      value="Siddharth Rao"
+                    />
+                    Siddharth Rao
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="task-member-checkbox"
+                      value="Priya Deshmukh"
+                    />
+                    Priya Deshmukh
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="task-member-checkbox"
+                      value="Aman Verma"
+                    />
+                    Aman Verma
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="task-member-checkbox"
+                      value="Sneha Patil"
+                    />
+                    Sneha Patil
+                  </label>
+                  <label class="member-checkbox-item">
+                    <input
+                      type="checkbox"
+                      class="task-member-checkbox"
+                      value="Rahul Sharma"
+                    />
+                    Rahul Sharma
+                  </label>
+                </div>
+              </div>
+              <div class="selected-counter">
+                <span id="task-selected-count">0</span> members assigned
+              </div>
+
+              <div style="display: flex; gap: 16px">
+                <div class="form-group" style="flex: 1">
+                  <label for="task-start-input">Start Date</label>
+                  <input type="date" id="task-start-input" class="form-input" />
+                </div>
+                <div class="form-group" style="flex: 1">
+                  <label for="task-due-input">Due Date</label>
+                  <input type="date" id="task-due-input" class="form-input" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" id="btn-save-task">
+                Save Task
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Contributions View -->
+        <div id="view-contributions" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Contribution Scorecard</h1>
+              <p class="page-subtitle">
+                Transparent tracking of the 100-point merit system
+              </p>
+            </div>
+            <div
+              class="header-actions"
+              style="display: flex; align-items: center; gap: 8px"
+            >
+              <button
+                class="btn btn-primary"
+                id="btn-add-score"
+                style="margin-left: 16px"
+                onclick="
+                  document.getElementById('score-modal').style.display = 'flex'
+                "
+              >
+                <span class="material-symbols-outlined">add</span> Add Score
+              </button>
+            </div>
+          </header>
+
+          <!-- Visual Scorecard 100-Point Breakdown -->
+          <section style="margin-bottom: 32px">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+              "
+            >
+              <h2 style="font-size: 16px; color: var(--text-primary)">
+                The 100-Point Breakdown
+              </h2>
+            </div>
+            <div
+              class="stats-grid"
+              style="
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+              "
+            >
+              <div class="stat-card">
+                <h3 class="stat-title">Event Participation</h3>
+                <div class="stat-value" style="color: #4caf50">
+                  20
+                  <span style="font-size: 14px; color: var(--text-secondary)"
+                    >pts</span
+                  >
+                </div>
+              </div>
+              <div class="stat-card">
+                <h3 class="stat-title">Task Completion</h3>
+                <div class="stat-value" style="color: #2196f3">
+                  25
+                  <span style="font-size: 14px; color: var(--text-secondary)"
+                    >pts</span
+                  >
+                </div>
+              </div>
+              <div class="stat-card">
+                <h3 class="stat-title">Attendance</h3>
+                <div class="stat-value" style="color: #ffc107">
+                  20
+                  <span style="font-size: 14px; color: var(--text-secondary)"
+                    >pts</span
+                  >
+                </div>
+              </div>
+              <div class="stat-card">
+                <h3 class="stat-title">Responsibility</h3>
+                <div class="stat-value" style="color: #9c27b0">
+                  20
+                  <span style="font-size: 14px; color: var(--text-secondary)"
+                    >pts</span
+                  >
+                </div>
+              </div>
+              <div class="stat-card">
+                <h3 class="stat-title">Initiative</h3>
+                <div class="stat-value" style="color: #e91e63">
+                  15
+                  <span style="font-size: 14px; color: var(--text-secondary)"
+                    >pts</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tracked Metrics Table -->
+          <section class="table-container">
+            <div
+              class="table-header"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h2>Contribution History</h2>
+              <div style="position: relative">
+                <button
+                  class="btn btn-secondary"
+                  id="btn-filter-contribution"
+                  style="display: flex; align-items: center; gap: 8px"
+                >
+                  <span class="material-symbols-outlined">filter_list</span>
+                  Filter
+                </button>
+                <div
+                  class="dropdown-menu"
+                  id="filter-dropdown-contribution"
+                  style="right: 0; left: auto; top: 100%; margin-top: 8px"
+                >
+                  <div class="dropdown-item" onclick="sortContribution('high')">
+                    High Contribution
+                  </div>
+                  <div class="dropdown-item" onclick="sortContribution('low')">
+                    Low Contribution
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Member Name</th>
+                    <th>Event Participation</th>
+                    <th>Tasks Completed</th>
+                    <th>Leadership Responsibilities</th>
+                    <th>Volunteer Work</th>
+                    <th>Wing-specific Contributions</th>
+                    <th>Total Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; align-items: center; gap: 12px"
+                      >
+                        <img
+                          src="https://ui-avatars.com/api/?name=Siddharth+Rao&background=2C2C35&color=D4AF37"
+                          alt=""
+                          style="width: 32px; height: 32px; border-radius: 50%"
+                        />
+                        <span
+                          style="font-weight: 500; color: var(--text-primary)"
+                          >Siddharth Rao</span
+                        >
+                      </div>
+                    </td>
+                    <td>18/20</td>
+                    <td>25/25</td>
+                    <td>20/20</td>
+                    <td>8/10</td>
+                    <td>Technical (12/15)</td>
+                    <td>
+                      <span style="color: #4caf50; font-weight: 600"
+                        >91/100</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; align-items: center; gap: 12px"
+                      >
+                        <img
+                          src="https://ui-avatars.com/api/?name=Priya+Deshmukh&background=2C2C35&color=D4AF37"
+                          alt=""
+                          style="width: 32px; height: 32px; border-radius: 50%"
+                        />
+                        <span
+                          style="font-weight: 500; color: var(--text-primary)"
+                          >Priya Deshmukh</span
+                        >
+                      </div>
+                    </td>
+                    <td>15/20</td>
+                    <td>22/25</td>
+                    <td>18/20</td>
+                    <td>10/10</td>
+                    <td>Cultural (14/15)</td>
+                    <td>
+                      <span style="color: #4caf50; font-weight: 600"
+                        >89/100</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div
+                        style="display: flex; align-items: center; gap: 12px"
+                      >
+                        <img
+                          src="https://ui-avatars.com/api/?name=Aman+Verma&background=2C2C35&color=D4AF37"
+                          alt=""
+                          style="width: 32px; height: 32px; border-radius: 50%"
+                        />
+                        <span
+                          style="font-weight: 500; color: var(--text-primary)"
+                          >Aman Verma</span
+                        >
+                      </div>
+                    </td>
+                    <td>12/20</td>
+                    <td>18/25</td>
+                    <td>10/20</td>
+                    <td>5/10</td>
+                    <td>Media (10/15)</td>
+                    <td>
+                      <span style="color: #ffc107; font-weight: 600"
+                        >65/100</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Duties View (Operations Pipeline) -->
+        <div id="view-duties" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Operations Pipeline</h1>
+              <p class="page-subtitle">Discipline Wing Event Duty Tracker</p>
+            </div>
+            <div class="header-actions">
+              <button
+                class="btn btn-primary"
+                onclick="
+                  document.getElementById('assign-duty-modal').style.display =
+                    'flex'
+                "
+              >
+                <span class="material-symbols-outlined">add</span> Assign Duty
+              </button>
+            </div>
+          </header>
+
+          <section class="table-container" style="margin-top: 24px">
+            <div class="table-header">
+              <h2>Active Duty Roster</h2>
+            </div>
+            <div style="overflow-x: auto">
+              <table class="data-table" id="duties-tracker-table">
+                <thead>
+                  <tr>
+                    <th>Duty / Venue</th>
+                    <th>Assigned Person</th>
+                    <th>Reporting Time</th>
+                    <th>Status</th>
+                    <th>Incident / Verification Log</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Demo Row 1 -->
+                  <tr>
+                    <td>
+                      <div style="font-weight: 500; color: var(--text-primary)">
+                        Main Gate Security
+                      </div>
+                      <div
+                        style="font-size: 12px; color: var(--text-secondary)"
+                      >
+                        Crowd Control
+                      </div>
+                    </td>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <img
+                          src="https://ui-avatars.com/api/?name=Arjun+Reddy&background=2C2C35&color=D4AF37"
+                          alt=""
+                          style="width: 28px; height: 28px; border-radius: 50%"
+                        />
+                        <span>Arjun Reddy</span>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        type="time"
+                        class="form-input"
+                        style="
+                          padding: 4px;
+                          width: 110px;
+                          background: rgba(255, 255, 255, 0.05);
+                        "
+                        value="08:30"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        class="form-input status-select"
+                        style="
+                          padding: 6px;
+                          width: 130px;
+                          background: rgba(76, 175, 80, 0.1);
+                          color: #4caf50;
+                          border-color: rgba(76, 175, 80, 0.3);
+                        "
+                        onchange="updateDutyStatusColor(this)"
+                      >
+                        <option value="reporting" style="color: #ffc107">
+                          Reporting
+                        </option>
+                        <option value="active" style="color: #4caf50" selected>
+                          Active on Duty
+                        </option>
+                        <option value="completed" style="color: #00bcd4">
+                          Completed
+                        </option>
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-input"
+                        placeholder="Log incident..."
+                        style="padding: 6px; width: 100%"
+                        value="No issues. Crowd smooth."
+                      />
+                    </td>
+                    <td>
+                      <button
+                        class="btn-icon"
+                        onclick="this.innerHTML='<span class=&quot;material-symbols-outlined&quot; style=&quot;color: #00bcd4;&quot;>verified</span>'"
+                      >
+                        <span class="material-symbols-outlined"
+                          >check_circle</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Demo Row 2 -->
+                  <tr>
+                    <td>
+                      <div style="font-weight: 500; color: var(--text-primary)">
+                        Backstage Access
+                      </div>
+                      <div
+                        style="font-size: 12px; color: var(--text-secondary)"
+                      >
+                        VIP Verification
+                      </div>
+                    </td>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 8px">
+                        <img
+                          src="https://ui-avatars.com/api/?name=Neha+Sharma&background=2C2C35&color=D4AF37"
+                          alt=""
+                          style="width: 28px; height: 28px; border-radius: 50%"
+                        />
+                        <span>Neha Sharma</span>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        type="time"
+                        class="form-input"
+                        style="
+                          padding: 4px;
+                          width: 110px;
+                          background: rgba(255, 255, 255, 0.05);
+                        "
+                        value="10:00"
+                      />
+                    </td>
+                    <td>
+                      <select
+                        class="form-input status-select"
+                        style="
+                          padding: 6px;
+                          width: 130px;
+                          background: rgba(255, 193, 7, 0.1);
+                          color: #ffc107;
+                          border-color: rgba(255, 193, 7, 0.3);
+                        "
+                        onchange="updateDutyStatusColor(this)"
+                      >
+                        <option
+                          value="reporting"
+                          style="color: #ffc107"
+                          selected
+                        >
+                          Reporting
+                        </option>
+                        <option value="active" style="color: #4caf50">
+                          Active on Duty
+                        </option>
+                        <option value="completed" style="color: #00bcd4">
+                          Completed
+                        </option>
+                      </select>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-input"
+                        placeholder="Log incident..."
+                        style="padding: 6px; width: 100%"
+                      />
+                    </td>
+                    <td>
+                      <button
+                        class="btn-icon"
+                        onclick="this.innerHTML='<span class=&quot;material-symbols-outlined&quot; style=&quot;color: #00bcd4;&quot;>verified</span>'"
+                      >
+                        <span class="material-symbols-outlined"
+                          >check_circle</span
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Assign Duty Modal -->
+        <div id="assign-duty-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Assign Operations Duty</h2>
+              <button
+                class="btn-icon"
+                onclick="
+                  document.getElementById('assign-duty-modal').style.display =
+                    'none'
+                "
+              >
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Duty / Venue</label>
+                <input
+                  type="text"
+                  id="duty-venue-input"
+                  class="form-input"
+                  placeholder="e.g. Main Auditorium Gate 2"
+                />
+              </div>
+              <div class="form-group">
+                <label>Assigned Person</label>
+                <input
+                  type="text"
+                  id="duty-person-input"
+                  class="form-input"
+                  placeholder="e.g. Rahul Singh"
+                />
+              </div>
+              <div class="form-group">
+                <label>Reporting Time</label>
+                <input type="time" id="duty-time-input" class="form-input" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" onclick="saveNewDuty()">
+                Assign Duty
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reports View (Analytics Hub) -->
+        <div id="view-reports" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Analytics Hub</h1>
+              <p class="page-subtitle">
+                Generate, view, and export comprehensive club reports
+              </p>
+            </div>
+          </header>
+
+          <!-- Filter Panel -->
+          <section
+            style="
+              margin-top: 24px;
+              background: rgba(255, 255, 255, 0.02);
+              padding: 16px;
+              border-radius: var(--radius-md);
+              border: 1px solid var(--border-color);
+              display: flex;
+              gap: 16px;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          >
+            <div
+              style="
+                font-weight: 500;
+                color: var(--text-primary);
+                margin-right: 8px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: middle; font-size: 20px"
+                >filter_alt</span
+              >
+              Filters:
+            </div>
+            <div class="form-group" style="margin-bottom: 0; min-width: 150px">
+              <input type="date" class="form-input" style="padding: 8px" />
+            </div>
+            <div class="form-group" style="margin-bottom: 0; min-width: 150px">
+              <select class="form-input" style="padding: 8px">
+                <option value="">All Events</option>
+                <option value="tech">Tech Symposium</option>
+                <option value="cult">Cultural Fest</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0; min-width: 150px">
+              <select class="form-input" style="padding: 8px">
+                <option value="">All Wings</option>
+                <option value="technical">Technical</option>
+                <option value="cultural">Cultural</option>
+                <option value="media">Media</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0; min-width: 150px">
+              <input
+                type="text"
+                class="form-input"
+                placeholder="Search Member..."
+                style="padding: 8px"
+              />
+            </div>
+          </section>
+
+          <!-- Report Templates (Tabs) -->
+          <section style="margin-top: 24px">
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                overflow-x: auto;
+                padding-bottom: 8px;
+              "
+              class="hide-scrollbar"
+            >
+              <button
+                class="btn btn-primary"
+                style="white-space: nowrap"
+                onclick="
+                  this.parentElement.querySelectorAll('.btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                  });
+                  this.classList.remove('btn-secondary');
+                  this.classList.add('btn-primary');
+                  document.getElementById('report-title-display').textContent =
+                    'Generated Report: Event Attendance';
+                "
+              >
+                Event Attendance
+              </button>
+              <button
+                class="btn btn-secondary"
+                style="white-space: nowrap"
+                onclick="
+                  this.parentElement.querySelectorAll('.btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                  });
+                  this.classList.remove('btn-secondary');
+                  this.classList.add('btn-primary');
+                  document.getElementById('report-title-display').textContent =
+                    'Generated Report: Member Participation';
+                "
+              >
+                Member Participation
+              </button>
+              <button
+                class="btn btn-secondary"
+                style="white-space: nowrap"
+                onclick="
+                  this.parentElement.querySelectorAll('.btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                  });
+                  this.classList.remove('btn-secondary');
+                  this.classList.add('btn-primary');
+                  document.getElementById('report-title-display').textContent =
+                    'Generated Report: Task Completion';
+                "
+              >
+                Task Completion
+              </button>
+              <button
+                class="btn btn-secondary"
+                style="white-space: nowrap"
+                onclick="
+                  this.parentElement.querySelectorAll('.btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                  });
+                  this.classList.remove('btn-secondary');
+                  this.classList.add('btn-primary');
+                  document.getElementById('report-title-display').textContent =
+                    'Generated Report: Wing-wise Participation';
+                "
+              >
+                Wing-wise Participation
+              </button>
+              <button
+                class="btn btn-secondary"
+                style="white-space: nowrap"
+                onclick="
+                  this.parentElement.querySelectorAll('.btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                  });
+                  this.classList.remove('btn-secondary');
+                  this.classList.add('btn-primary');
+                  document.getElementById('report-title-display').textContent =
+                    'Generated Report: Monthly Contribution';
+                "
+              >
+                Monthly Contribution
+              </button>
+              <button
+                class="btn btn-secondary"
+                style="white-space: nowrap"
+                onclick="
+                  this.parentElement.querySelectorAll('.btn').forEach((b) => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-secondary');
+                  });
+                  this.classList.remove('btn-secondary');
+                  this.classList.add('btn-primary');
+                  document.getElementById('report-title-display').textContent =
+                    'Generated Report: Volunteer Activity';
+                "
+              >
+                Volunteer Activity
+              </button>
+            </div>
+          </section>
+
+          <!-- Report Display Area -->
+          <section class="table-container" style="margin-top: 24px">
+            <div
+              class="table-header"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h2 id="report-title-display">
+                Generated Report: Event Attendance
+              </h2>
+              <div style="display: flex; gap: 8px">
+                <button
+                  class="btn btn-secondary"
+                  style="display: flex; align-items: center; gap: 8px"
+                  onclick="alert('Exporting to PDF...')"
+                >
+                  <span class="material-symbols-outlined">picture_as_pdf</span>
+                  Export PDF
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  style="display: flex; align-items: center; gap: 8px"
+                  onclick="alert('Exporting to CSV...')"
+                >
+                  <span class="material-symbols-outlined">csv</span> Export CSV
+                </button>
+              </div>
+            </div>
+            <div
+              style="
+                padding: 60px 40px;
+                text-align: center;
+                color: var(--text-secondary);
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: var(--radius-sm);
+                border: 1px dashed rgba(255, 255, 255, 0.1);
+                margin: 16px;
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="
+                  font-size: 64px;
+                  opacity: 0.5;
+                  margin-bottom: 16px;
+                  display: block;
+                  color: var(--accent-color);
+                "
+                >analytics</span
+              >
+              <p
+                style="
+                  font-size: 18px;
+                  color: var(--text-primary);
+                  font-weight: 500;
+                "
+              >
+                Report generated successfully and is ready.
+              </p>
+              <p
+                style="
+                  font-size: 14px;
+                  margin-top: 8px;
+                  max-width: 400px;
+                  margin-left: auto;
+                  margin-right: auto;
+                "
+              >
+                The data filtered by the selected parameters has been compiled.
+                Click on the export buttons above to download.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Activity Log Timeline View -->
+        <div id="view-activity-log" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Activity Log</h1>
+              <p class="page-subtitle">Real-time tracker of all club events and updates</p>
+            </div>
+          </header>
+          <section style="margin-top: 24px">
+            <div class="card">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div style="font-weight: 500; color: var(--text-primary); margin-bottom: 4px;">Rahul Singh marked present</div>
+                  <div style="font-size: 12px; color: var(--text-secondary);">Tech Symposium • 10 mins ago</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background: var(--info); border-color: var(--bg-main); box-shadow: 0 0 10px rgba(59,130,246,0.3);"></div>
+                  <div style="font-weight: 500; color: var(--text-primary); margin-bottom: 4px;">New Duty assigned to Neha Sharma</div>
+                  <div style="font-size: 12px; color: var(--text-secondary);">Discipline Wing • 1 hour ago</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background: var(--success); border-color: var(--bg-main); box-shadow: 0 0 10px rgba(16,185,129,0.3);"></div>
+                  <div style="font-weight: 500; color: var(--text-primary); margin-bottom: 4px;">Contribution Score Updated</div>
+                  <div style="font-size: 12px; color: var(--text-secondary);">System Auto-log • 3 hours ago</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background: var(--warning); border-color: var(--bg-main); box-shadow: 0 0 10px rgba(245,158,11,0.3);"></div>
+                  <div style="font-weight: 500; color: var(--text-primary); margin-bottom: 4px;">Task "Update Directory" completed</div>
+                  <div style="font-size: 12px; color: var(--text-secondary);">Siddharth Rao • Yesterday, 4:30 PM</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Settings View -->
+        <div id="view-settings" class="view-section" style="display: none">
+          <header class="top-header">
+            <div>
+              <h1 class="page-title">Settings</h1>
+              <p class="page-subtitle">Configure your dashboard preferences and system alerts</p>
+            </div>
+          </header>
+          <section style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px;">
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px;">
+              <div>
+                <h3 style="font-size: 16px; color: var(--text-primary); margin-bottom: 4px;">Dark Mode</h3>
+                <p style="font-size: 12px; color: var(--text-secondary);">Toggle the global dark theme</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px;">
+              <div>
+                <h3 style="font-size: 16px; color: var(--text-primary); margin-bottom: 4px;">Email Alerts</h3>
+                <p style="font-size: 12px; color: var(--text-secondary);">Receive daily summary emails</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px;">
+              <div>
+                <h3 style="font-size: 16px; color: var(--text-primary); margin-bottom: 4px;">Push Notifications</h3>
+                <p style="font-size: 12px; color: var(--text-secondary);">Allow browser notifications for tasks</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <!-- Add Score Modal -->
+        <div id="score-modal" class="modal-overlay" style="display: none">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Add Contribution Score</h2>
+              <button class="btn-icon" id="btn-close-score-modal">
+                <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="score-member-name">Member Name</label>
+                <input
+                  type="text"
+                  id="score-member-name"
+                  class="form-input"
+                  placeholder="e.g. John Doe"
+                />
+              </div>
+              <div class="form-group">
+                <label for="score-events"
+                  >Event Participation (out of 20)</label
+                >
+                <input
+                  type="number"
+                  id="score-events"
+                  class="form-input"
+                  min="0"
+                  max="20"
+                  placeholder="0 - 20"
+                />
+              </div>
+              <div class="form-group">
+                <label for="score-tasks">Tasks Completed (out of 25)</label>
+                <input
+                  type="number"
+                  id="score-tasks"
+                  class="form-input"
+                  min="0"
+                  max="25"
+                  placeholder="0 - 25"
+                />
+              </div>
+              <div class="form-group">
+                <label for="score-leadership"
+                  >Leadership Responsibilities (out of 20)</label
+                >
+                <input
+                  type="number"
+                  id="score-leadership"
+                  class="form-input"
+                  min="0"
+                  max="20"
+                  placeholder="0 - 20"
+                />
+              </div>
+              <div class="form-group">
+                <label for="score-volunteer">Volunteer Work (out of 10)</label>
+                <input
+                  type="number"
+                  id="score-volunteer"
+                  class="form-input"
+                  min="0"
+                  max="10"
+                  placeholder="0 - 10"
+                />
+              </div>
+
+              <div style="display: flex; gap: 16px">
+                <div class="form-group" style="flex: 2">
+                  <label for="score-wing-name">Wing/Committee</label>
+                  <input
+                    type="text"
+                    id="score-wing-name"
+                    class="form-input"
+                    placeholder="e.g. Technical"
+                  />
+                </div>
+                <div class="form-group" style="flex: 1">
+                  <label for="score-wing-pts">Score (/15)</label>
+                  <input
+                    type="number"
+                    id="score-wing-pts"
+                    class="form-input"
+                    min="0"
+                    max="15"
+                    placeholder="0 - 15"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" id="btn-save-score">
+                Save Score
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js?v=2"></script>
+    <script>
+      // Contribution Filter Dropdown Toggle
+      const filterBtnContrib = document.getElementById(
+        "btn-filter-contribution",
+      );
+      const filterDropdownContrib = document.getElementById(
+        "filter-dropdown-contribution",
+      );
+
+      if (filterBtnContrib && filterDropdownContrib) {
+        filterBtnContrib.addEventListener("click", (e) => {
+          e.stopPropagation();
+          filterDropdownContrib.classList.toggle("show");
+        });
+        document.addEventListener("click", (e) => {
+          if (
+            !filterBtnContrib.contains(e.target) &&
+            !filterDropdownContrib.contains(e.target)
+          ) {
+            filterDropdownContrib.classList.remove("show");
+          }
+        });
+      }
+
+      // Sorting Logic for Contribution History
+      function sortContribution(order) {
+        const tbody = document.querySelector(
+          "#view-contributions .data-table tbody",
+        );
+        if (!tbody) return;
+
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+        rows.sort((a, b) => {
+          // Get the total score text from the 7th column (index 6), e.g. "91/100"
+          const scoreTextA = a.children[6] ? a.children[6].textContent : "0";
+          const scoreTextB = b.children[6] ? b.children[6].textContent : "0";
+
+          // Parse the numerical score out
+          const valA = parseInt(scoreTextA.split("/")[0]) || 0;
+          const valB = parseInt(scoreTextB.split("/")[0]) || 0;
+
+          if (order === "high") {
+            return valB - valA; // Descending
+          } else {
+            return valA - valB; // Ascending
+          }
+        });
+
+        // Re-append rows in the sorted order
+        rows.forEach((row) => tbody.appendChild(row));
+
+        // Close dropdown
+        if (filterDropdownContrib) {
+          filterDropdownContrib.classList.remove("show");
+        }
+      }
+
+      // Duty Tracker Status Color Logic
+      function updateDutyStatusColor(selectElement) {
+        const val = selectElement.value;
+        if (val === "reporting") {
+          selectElement.style.background = "rgba(255, 193, 7, 0.1)";
+          selectElement.style.color = "#FFC107";
+          selectElement.style.borderColor = "rgba(255, 193, 7, 0.3)";
+        } else if (val === "active") {
+          selectElement.style.background = "rgba(76, 175, 80, 0.1)";
+          selectElement.style.color = "#4CAF50";
+          selectElement.style.borderColor = "rgba(76, 175, 80, 0.3)";
+        } else if (val === "completed") {
+          selectElement.style.background = "rgba(0, 188, 212, 0.1)";
+          selectElement.style.color = "#00bcd4";
+          selectElement.style.borderColor = "rgba(0, 188, 212, 0.3)";
+        }
+      }
+
+      // Save New Duty Logic
+      function saveNewDuty() {
+        const venue = document.getElementById("duty-venue-input").value.trim();
+        const person = document
+          .getElementById("duty-person-input")
+          .value.trim();
+        const time = document.getElementById("duty-time-input").value;
+
+        if (!venue || !person) {
+          alert("Please enter both Duty/Venue and Assigned Person");
+          return;
+        }
+
+        const tbody = document.querySelector("#duties-tracker-table tbody");
+        const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(person)}&background=2C2C35&color=D4AF37`;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+                <td>
+                    <div style="font-weight: 500; color: var(--text-primary);">${venue}</div>
+                </td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="${avatarUrl}" alt="" style="width: 28px; height: 28px; border-radius: 50%;">
+                        <span>${person}</span>
+                    </div>
+                </td>
+                <td>
+                    <input type="time" class="form-input" style="padding: 4px; width: 110px; background: rgba(255,255,255,0.05);" value="${time}">
+                </td>
+                <td>
+                    <select class="form-input status-select" style="padding: 6px; width: 130px; background: rgba(255, 193, 7, 0.1); color: #FFC107; border-color: rgba(255, 193, 7, 0.3);" onchange="updateDutyStatusColor(this)">
+                        <option value="reporting" style="color: #FFC107;" selected>Reporting</option>
+                        <option value="active" style="color: #4CAF50;">Active on Duty</option>
+                        <option value="completed" style="color: #00bcd4;">Completed</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" class="form-input" placeholder="Log incident..." style="padding: 6px; width: 100%;">
+                </td>
+                <td>
+                    <button class="btn-icon" onclick="this.innerHTML='<span class=&quot;material-symbols-outlined&quot; style=&quot;color: #00bcd4;&quot;>verified</span>'"><span class="material-symbols-outlined">check_circle</span></button>
+                </td>
+            `;
+
+        tbody.appendChild(tr);
+
+        // Clear and hide
+        document.getElementById("duty-venue-input").value = "";
+        document.getElementById("duty-person-input").value = "";
+        document.getElementById("duty-time-input").value = "";
+        document.getElementById("assign-duty-modal").style.display = "none";
+
+        if (typeof pushNotification === "function") {
+          pushNotification(`Duty assigned to ${person}`);
+        }
+      }
+    </script>
+    <!-- Slide-out Notification Panel -->
+    <div id="notification-panel" class="side-panel-overlay">
+      <div class="side-panel">
+        <div class="side-panel-header">
+          <h2 style="font-size: 20px; font-weight: 600;">Notifications</h2>
+          <button class="btn-icon" onclick="document.getElementById('notification-panel').classList.remove('active')">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="side-panel-body">
+          <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: var(--radius-md); border-left: 3px solid var(--info);">
+            <div style="font-weight: 500; font-size: 14px; margin-bottom: 4px; color: var(--text-primary);">Meeting Reminder</div>
+            <div style="font-size: 12px; color: var(--text-secondary);">Core committee meeting at 5 PM today.</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">2 hours ago</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: var(--radius-md); border-left: 3px solid var(--warning);">
+            <div style="font-weight: 500; font-size: 14px; margin-bottom: 4px; color: var(--text-primary);">Pending Review</div>
+            <div style="font-size: 12px; color: var(--text-secondary);">3 task reports are waiting for your approval.</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">4 hours ago</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: var(--radius-md); border-left: 3px solid var(--success);">
+            <div style="font-weight: 500; font-size: 14px; margin-bottom: 4px; color: var(--text-primary);">Event Success</div>
+            <div style="font-size: 12px; color: var(--text-secondary);">The Tech Symposium was marked successfully completed!</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">Yesterday</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
